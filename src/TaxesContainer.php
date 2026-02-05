@@ -29,7 +29,7 @@ class TaxesContainer extends Container
      * @param array $attributes The tax attributes
      * @param bool  $withEvent  Enable firing the event
      *
-     * @return null|\Jackiedo\Cart\Tax
+     * @return null|Tax
      */
     public function addTax(array $attributes = [], $withEvent = true)
     {
@@ -67,7 +67,7 @@ class TaxesContainer extends Container
      * @param array  $attributes The new attributes
      * @param bool   $withEvent  Enable firing the event
      *
-     * @return null|\Jackiedo\Cart\Tax
+     * @return null|Tax
      */
     public function updateTax($taxHash, array $attributes = [], $withEvent = true)
     {
@@ -102,7 +102,7 @@ class TaxesContainer extends Container
      *
      * @param string $taxHash The unique identifier of tax instance
      *
-     * @return \Jackiedo\Cart\Tax
+     * @return Tax
      */
     public function getTax($taxHash)
     {
@@ -131,7 +131,7 @@ class TaxesContainer extends Container
         }
 
         // If filter is a closure
-        if ($filter instanceof Closure) {
+        if ($filter instanceof \Closure) {
             return $this->filter($filter)->all();
         }
 
